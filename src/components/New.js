@@ -8,6 +8,7 @@ export default function New() {
   const count = useSelector((state) => state.count);
 
   const insertDataItem = function () {
+    console.log("btn click");
     if (dataItem.contents.length < 1) {
       alert("at least one word is required");
       return false;
@@ -34,7 +35,7 @@ export default function New() {
           }
         }}
       />
-      <button className="btn" onClick={insertDataItem}>
+      <button className="btnAdd" onClick={insertDataItem}>
         <span className="material-icons">add</span>
       </button>
     </div>

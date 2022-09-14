@@ -1,7 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+#header {
+  padding-top: 50px;
+}
+
+.App {
+  height: 100vh;
+  position: relative;
+}
+
+.newData {
+  width: 80vw;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.newData input {
+  width: 80%;
+  height: 30px;
+  overflow: hidden;
+  margin-right: 20px;
+  font-family: inherit;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.3);
+  resize: none;
+}
+.newData input:focus {
+  outline: 1px solid #111;
+}
+.newData .btnAdd {
+  width: auto;
+  position: absolute;
+  right: 0;
+  margin-right: 7px;
+  padding: 2px 4px;
+  border: 1px solid #111;
+  border-radius: 100%;
+}
+
+.todoList {
+  width: 80vw;
+  margin: 0 auto;
+}
 .todoList .list {
   display: flex;
+  position: relative;
+  padding: 5px;
 }
 .todoList .list.done {
-  text-decoration: line-through;
   color: #999;
+  text-decoration: line-through;
+}
+.todoList .list.done div {
+  pointer-events: none;
+}
+.todoList .list div {
+  width: 100%;
+  height: 30px;
+  padding: 5px 10px;
+  text-align: left;
+}
+.todoList .list div textarea {
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  font-family: inherit;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.3);
+  resize: none;
+}
+.todoList .list div textarea:focus {
+  outline: none;
+}
+.todoList .list .btnDel {
+  width: auto;
+  position: absolute;
+  right: 0;
+}
+
+#footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 50px;
 }
