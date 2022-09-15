@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteData, modifyData } from "../store/storeItem";
 
@@ -28,11 +27,13 @@ export default function Item({ data }) {
 
   return (
     <li className={isDone ? "done list" : "list"}>
-      <input type="checkbox" name="done" id="done" onClick={toggleDone} />
+      <input type="checkbox" className="check" id={data.id} onClick={toggleDone} />
+      <label for={data.id}></label>
       <div
         ref={contentsRef}
         onClick={() => {
           setIsEdit(true);
+          setLocalContents(data.contents);
         }}
       >
         {isEdit ? (
@@ -41,9 +42,7 @@ export default function Item({ data }) {
             onChange={(e) => {
               setLocalContents(e.target.value);
             }}
-          >
-            {data.contents}
-          </textarea>
+          ></textarea>
         ) : (
           data.contents
         )}
@@ -54,7 +53,7 @@ export default function Item({ data }) {
           dispatch(deleteData(data.id));
         }}
       >
-        <span class="material-icons">close</span>
+        <span className="material-icons">close</span>
       </div>
     </li>
   );
