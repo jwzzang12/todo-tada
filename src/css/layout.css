@@ -59,6 +59,7 @@ button {
   border-bottom: 1px solid rgba(17, 17, 17, 0.3);
   background-color: rgb(26, 44, 68);
   resize: none;
+  border-radius: 5px;
 }
 .newData input:focus {
   outline: 1px solid #111;
@@ -99,14 +100,14 @@ button {
   text-align: left;
 }
 .todoList .list div textarea {
-  width: 100%;
-  height: 30px;
+  width: 90%;
+  height: 20px;
   overflow: hidden;
   font-family: inherit;
   font-size: 16px;
   border: none;
   border-bottom: 1px solid rgba(17, 17, 17, 0.3);
-  background-color: rgb(235, 231, 183);
+  background-color: rgba(17, 17, 17, 0.1);
   resize: none;
 }
 .todoList .list div textarea:focus {
@@ -131,6 +132,7 @@ input[type=checkbox] + label {
   height: 20px;
   position: relative;
   border: 2px solid #111;
+  border-radius: 5px;
 }
 
 input:checked + label:after {
