@@ -11,6 +11,3 @@ export default function List({ data }) {
     </div>
   );
 }
-//listbox click - > 수정
-//!listbox(listbox아닌곳) click -> 다시 바뀜
-//delete 기능 만들지마

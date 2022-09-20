@@ -2,6 +2,7 @@ export const ACTION_TYPES = {
   INSERT_DATA: "insertData",
   DELETE_DATA: "deleteData",
   MODIFY_DATA: "modifyData",
+  ISDONE_DATA: "isDoneData",
 };
 export const initState = {
   count: 0,
@@ -24,6 +25,12 @@ export const modifyData = (id, localContents) => {
   return {
     type: ACTION_TYPES.MODIFY_DATA,
     payload: { id, localContents },
+  };
+};
+export const isDoneData = (id, isDone) => {
+  return {
+    type: ACTION_TYPES.ISDONE_DATA,
+    payload: { id, isDone },
   };
 };
 const storeItem = (state = initState, action) => {
@@ -52,6 +59,18 @@ const storeItem = (state = initState, action) => {
         dataList: state.dataList.map((item, idx) => {
           if (item.id === action.payload.id) {
             return { ...item, contents: localContents };
+          }
+          return item;
+        }),
+      };
+    }
+    case ACTION_TYPES.ISDONE_DATA: {
+      const isDone = action.payload.isDone;
+      return {
+        count: state.count,
+        dataList: state.dataList.map((item, idx) => {
+          if (item.id === action.payload.id) {
+            return { ...item, isDone: !isDone };
           }
           return item;
         }),

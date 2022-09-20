@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { deleteData, modifyData } from "../store/storeItem";
+import { deleteData, isDoneData, modifyData } from "../store/storeItem";
 
 export default function Item({ data }) {
-  console.log(data);
+  // console.log(data);
   const [isDone, setIsDone] = useState(data.isDone);
   const [isEdit, setIsEdit] = useState(false);
   const [localContents, setLocalContents] = useState(data.contents);
@@ -13,9 +13,6 @@ export default function Item({ data }) {
 
   const clickOutside = (e) => {
     if (isEdit && !contentsRef.current.contains(e.target)) setIsEdit(false);
-  };
-  const toggleDone = () => {
-    setIsDone(!isDone);
   };
   useEffect(() => {
     window.addEventListener("click", clickOutside);
@@ -27,8 +24,14 @@ export default function Item({ data }) {
 
   return (
     <li className={isDone ? "done list" : "list"}>
-      <input type="checkbox" className="check" id={data.id} onClick={toggleDone} />
-      <label for={data.id}></label>
+      <input type="checkbox" className="check" id={data.id} />
+      <label
+        for={data.id}
+        onClick={() => {
+          setIsDone(!isDone);
+          dispatch(isDoneData(data.id, isDone));
+        }}
+      ></label>
       <div
         ref={contentsRef}
         onClick={() => {
