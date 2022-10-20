@@ -5,7 +5,7 @@ export default function List({ data }) {
     <div className="todoList">
       <ul>
         {data.map((item, idx) => {
-          return <Item data={item} key={idx} />;
+          return <Item data={item} key={item.id} />;
         })}
       </ul>
     </div>
