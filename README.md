@@ -1,4 +1,4 @@
-# Todo-tada 
+# [Todo-tada](https://moonjiwon-todo-tada.netlify.app)
 
 ## Project Description
 
@@ -13,10 +13,9 @@ Built with React and Redux.
 
 Also, it's responsive.
 
-## Project Screen Shot
+## Tech
 
-![image](https://user-images.githubusercontent.com/78199999/190329332-1c8cabba-e283-4fa4-9602-b7bf9cb635da.png)
-
+![Stack](https://skillicons.dev/icons?i=react,redux,sass)
 
 ## Reflection
 
